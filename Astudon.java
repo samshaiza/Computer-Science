@@ -182,6 +182,8 @@ public class Astudon {
 			Room resRoom = Room.newResRoom();
 			System.out.println(resRoom.toString());
 			player.reset();
+			System.out.print("Leleh: Hey, hey you heard that Joe got Ebola?");
+			scan.nextLine();
 			System.out.print("- Press enter to continue to the next room -\n");
 			// 5
 			scan.nextLine();
@@ -208,6 +210,8 @@ public class Astudon {
 			scan.nextLine();
 			System.out.println(resRoom.toString());
 			player.reset();
+			System.out.print("Leleh: Hey, we've gone through half of this (:");
+			scan.nextLine();
 			System.out.print("- Press enter to continue to the next room -\n");
 			// 9
 			scan.nextLine();
@@ -247,22 +251,18 @@ public class Astudon {
 			scan.nextLine();
 			System.out.println(resRoom.toString());
 			player.reset();
-			System.out.print("- Press enter to continue to the next room -\n");
-			// 15
+			System.out.print("Leleh: We're nearing the end of this... the next room will be the last.");
 			scan.nextLine();
-			Room room15 = Room.newRoom(0, player);
-			if (room15.isNotComplete()) {
-				room15.enter(player);
-			}
 			System.out.print("- Press enter to continue to the next room -\n");
 			
 			// BOSS
 			scan.nextLine();
-			Room boss = Room.newRoom(0, player);
+	
+			Room boss = Room.newBossRoom();
 			if (boss.isNotComplete()) {
 				boss.enter(player);
 			}
-			System.out.print("- Press enter to continue to the next room -\n");
+			
 			
 
 		}
