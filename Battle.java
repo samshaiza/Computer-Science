@@ -29,7 +29,7 @@ public class Battle {
 				if (action.equals("a") && player.mana() >= 5) {
 					// Magic Heal
 					player.heal();
-					System.out.println("You healed for 5 health.");
+					System.out.println("You healed for " + player.healAMT() + " health.");
 				} else if (action.equals("m") && player.mana() >= 5) {
 					// Magic Attack
 					System.out.println("You Attacked! " + monster.name() + " took " + player.fireball() + " damage.");
@@ -44,22 +44,20 @@ public class Battle {
 			if (player.isAlive() && monster.isAlive()) {
 				// Monster Actions
 				scan.nextLine();
-				if (monster.hp() > 4 && monster.mana() < 10) {
+				if (monster.hp() >= 5 && monster.mana() <= 10) {
 					// Regular Attack
 					player.takeDmg(monster.attack());
 					System.out.println(monster.name() + " attacks! You took " + monster.attack() + " damage.");
-				} else if (monster.hp() < 6 && monster.mana() < 10) {
+				} else if (monster.hp() <= 4) {
 					// Rest
 					monster.rest();
 					System.out.println(monster.name() + " rested for " + (monster.rest() - monster.hp()) + " health.");
-				} else if (monster.mana() > 10 && monster.hp() > 4) {
+				} else if (monster.mana() >= 10 && monster.hp() >= 5) {
 					// Magic Attack
 					player.takeDmg(monster.fireball());
 					System.out.println(monster.name() + " uses Fireball! You took " + monster.fireball() + " damage.");
-				} else if (monster.mana() > 10 && monster.hp() < 6) {
-					// Magic Heal
-					monster.heal();
-					System.out.println(monster.name() + " healed for 5 health.");
+				} else {
+					System.out.println(monster.name() + " misses!");
 				}
 			}
 		} while (player.isAlive() && monster.isAlive());
