@@ -39,7 +39,7 @@ public class Room {
 
 	public static Room newBossRoom() {
 		return new Room(
-				"A sprawling, quiet blue-gray stone castle deep in a forest, approached by a tree-lined avenue. A rich smell of sulfur ",
+				"A sprawling, quiet blue-gray stone castle deep in a forest, approached by a tree-lined avenue.\nA rich smell of sulfur ",
 				Monster.newBoss(), true);
 	}
 
