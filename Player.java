@@ -63,7 +63,7 @@ public class Player {
 		this.lvl = this.lvl + 1;
 		this.maxHP = this.maxHP + 2;
 		this.maxMana = this.maxMana + 2;
-		this.dmg = this.dmg + 2;
+		this.dmg = this.dmg + 1;
 		this.xp = this.lvl + 12;
 	}
 
@@ -78,7 +78,11 @@ public class Player {
 
 	public void heal() {
 		this.mana -= 5;
-		this.hp += 5;
+		this.hp += (this.lvl * 2) + 10;
+	}
+	
+	public int healAMT() {
+		return (this.lvl * 2) + 9;
 	}
 
 	public int healAmt() {
@@ -87,7 +91,7 @@ public class Player {
 
 	public int fireball() {
 		this.mana -= 5;
-		return dmg + 2;
+		return dmg + 5;
 	}
 
 	public Room getCurrRoom() {
