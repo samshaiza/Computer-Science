@@ -49,31 +49,31 @@ public class Monster {
 		i = rand.nextInt(4);
 		if (norm == 0) {
 			if (i == 0) {
-				return new Monster("Goblin", player.level() + 5, player.level() + 5, player.level() + 5,
+				return new Monster("Goblin", player.level() + 11, player.level() + 4, player.level() + 5,
 						player.level() + 4, player.level());
 			} else if (i == 1) {
-				return new Monster("Cyclops", player.level() + 7, player.level() + 7, player.level() + 5,
+				return new Monster("Cyclops", player.level() + 13, player.level() + 5, player.level() + 5,
 						player.level() + 4, player.level());
 			} else if (i == 2) {
-				return new Monster("Goblin Mage", player.level() + 5, player.level() + 5, player.level() + 15,
-						player.level() + 4, player.level());
+				return new Monster("Goblin Mage", player.level() + 11, player.level() + 4, player.level() + 15,
+						player.level() + 6, player.level());
 			} else {
-				return new Monster("Cyclops Mage", player.level() + 7, player.level() + 7, player.level() + 15,
-						player.level() + 4, player.level());
+				return new Monster("Cyclops Mage", player.level() + 13, player.level() + 5, player.level() + 15,
+						player.level() + 6, player.level());
 			}
 		} else if (norm == 1) {
 			if (i == 0) {
-				return new Monster("Undead Goblin", player.level() + 5, player.level() + 5, player.level() + 5,
+				return new Monster("Undead Goblin", player.level() + 7, player.level() + 5, player.level() + 5,
 						player.level() + 4, player.level());
 			} else if (i == 1) {
-				return new Monster("Undead Cyclops", player.level() + 7, player.level() + 7, player.level() + 5,
+				return new Monster("Undead Cyclops", player.level() + 8, player.level() + 7, player.level() + 5,
 						player.level() + 4, player.level());
 			} else if (i == 2) {
-				return new Monster("Undead Goblin Mage", player.level() + 5, player.level() + 5, player.level() + 15,
-						player.level() + 4, player.level());
+				return new Monster("Undead Goblin Mage", player.level() + 7, player.level() + 4, player.level() + 15,
+						player.level() + 6, player.level());
 			} else {
-				return new Monster("Undead Cyclops Mage", player.level() + 7, player.level() + 7, player.level() + 15,
-						player.level() + 4, player.level());
+				return new Monster("Undead Cyclops Mage", player.level() + 8, player.level() + 6, player.level() + 15,
+						player.level() + 6, player.level());
 			}
 		} else {
 
@@ -83,7 +83,7 @@ public class Monster {
 	}
 
 	public static Monster newBoss() {
-		return new Monster("Astudon", 40, 18, 10, 8, 10);
+		return new Monster("ASTUDON", 30, 16, 10, 8, 10);
 	}
 
 	public Monster(String name, int hp, int dmg, int mana, int xp, int lvl) {
@@ -113,12 +113,12 @@ public class Monster {
 
 	public int fireball() {
 		this.mana -= 5;
-		return dmg + 2;
+		return dmg + 1;
 	}
 
 	public void heal() {
-		this.mana -= 5;
-		this.hp += 5;
+		this.mana -= 10;
+		this.hp += 7;
 	}
 
 	public int healAmt() {
